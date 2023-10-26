@@ -1,6 +1,6 @@
-import { FormWrap } from './ContactForm.styled';
+import { FormWrap, StyledField } from './ContactForm.styled';
 import React, { Component } from 'react';
-import { Formik, Field, ErrorMessage } from 'formik';
+import { Formik, ErrorMessage } from 'formik';
 import * as yup from 'yup';
 
 const phoneRegExp = /[0-9]{3}-[0-9]{2}-[0-9]{2}/;
@@ -34,12 +34,12 @@ export class ContactForm extends Component {
         <FormWrap>
           <label>
             Name
-            <Field type="text" name="name" />
+            <StyledField type="text" name="name" />
             <ErrorMessage name="name" component="div" />
           </label>
           <label>
             Number
-            <Field type="tel" name="number" placeholder="123-45-67" />
+            <StyledField type="tel" name="number" placeholder="123-45-67" />
             <ErrorMessage name="number" component="div" />
           </label>
           <button type="submit">Add contact</button>
